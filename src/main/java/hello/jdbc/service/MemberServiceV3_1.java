@@ -14,14 +14,19 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@RequiredArgsConstructor
+
 @Slf4j
 public class MemberServiceV3_1 {
 
     private final MemberRepositoryV3 repository;
     private final PlatformTransactionManager transactionManager;
 
-    public void accountTransfer(String fromId,String toId,int money) throws SQLException {
+    public MemberServiceV3_1(MemberRepositoryV3 repository, PlatformTransactionManager transactionManager) {
+        this.repository = repository;
+        this.transactionManager = transactionManager;
+    }
+
+    public void accountTransfer(String fromId, String toId, int money) throws SQLException {
         TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
 
         try{

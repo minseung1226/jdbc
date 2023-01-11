@@ -33,9 +33,6 @@ public class MemberServiceV3_2 {
                 throw new RuntimeException(e);
             }
         });
-
-
-
     }
 
     private void bizLogic(String fromId, String toId, int money) throws SQLException {
