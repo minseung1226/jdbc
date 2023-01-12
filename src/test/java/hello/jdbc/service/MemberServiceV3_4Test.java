@@ -35,7 +35,6 @@ class MemberServiceV3_4Test {
     public final static String MEMBER_A="memberA";
     public final static String MEMBER_B="memberB";
     public final static String Ex="ex";
-
     @Autowired
     MemberServiceV3_3 memberService;
     @Autowired
